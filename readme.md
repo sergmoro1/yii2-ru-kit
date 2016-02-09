@@ -5,7 +5,7 @@ The Behavior class for operations with date fields in Russian format.
 <h2>Installation</h2>
 
 <pre>
-$ composer require sergmoro1/yii2-ru-date
+$ composer require sergmoro1/yii2-ru-date "dev-master"
 </pre>
 
 <h2>Usage</h2>
