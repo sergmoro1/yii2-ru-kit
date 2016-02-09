@@ -4,14 +4,15 @@
     "description": "Behavior for Russian date.",
     "keywords": [
         "yii2",
-        "date", "russian"
+        "date", 
+        "russian"
     ],
     "type": "yii2-extension",
     "license": "MIT",
     "authors": [
         {
             "name": "Sergey Morozov",
-            "email": "sergmoro1@ya.ru",
+            "email": "sergmoro1@ya.ru"
         }
     ],
     "minimum-stability": "stable",
