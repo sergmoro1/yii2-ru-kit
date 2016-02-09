@@ -5,7 +5,7 @@ The Behavior class for operations with date fields in Russian format.
 <h2>Installation</h2>
 
 <pre>
-$ composer require github.com/sergmoro1/yii2-ru-date
+$ composer require sergmoro1/yii2-ru-date
 </pre>
 
 <h2>Usage</h2>
@@ -13,14 +13,16 @@ $ composer require github.com/sergmoro1/yii2-ru-date
 You should define behavior in ActiveRecord class.
 
 <pre>
+use sergmoro1\rudate\RuDate;
+
 public function behaviors() {
   return [
-    'MustHave' =&gt; ['class' =&gt; MustHave::className()]
+    'RuDate' =&gt; ['class' =&gt; RuDate::className()]
   ];
 }
 </pre>
 
 And use it in appropriate place in a view.
 <pre>
-<?= $model->getFullDate('created_at'); ?>
+&lt;?= $model->getFullDate('created_at'); ?&gt;
 </pre>
