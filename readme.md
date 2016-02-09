@@ -10,16 +10,20 @@ $ composer require sergmoro1/yii2-ru-date "dev-master"
 
 <h2>Usage</h2>
 
-You should define behavior in ActiveRecord class.
+You should define behavior in a Model class.
 
 <pre>
 use sergmoro1\rudate\RuDate;
 
-public function behaviors() {
-  return [
-    'RuDate' =&gt; ['class' =&gt; RuDate::className()]
-  ];
-}
+class Post extends ActiveRecord
+{
+  ...
+  public function behaviors() {
+    return [
+      'RuDate' =&gt; ['class' =&gt; RuDate::className()]
+    ];
+  }
+  ...
 </pre>
 
 And use it in appropriate place in a view.
