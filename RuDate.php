@@ -20,14 +20,14 @@ use yii\base\Behavior;
 class RuDate extends Behavior
 {
 	// Russian names of months
-	private static $month = ['01'=>'янв', '02'=>'фев', '03'=>'мар', '04'=>'апр', '05'=>'май', '06'=>'июн', 
-		'07'=>'июл', '08'=>'авг', '09'=>'сен', '10'=>'окт', '11'=>'ноя', '12'=>'дек'];
+	private static $month = ['01'=>'Янв', '02'=>'Фев', '03'=>'Мар', '04'=>'Апр', '05'=>'Май', '06'=>'Июн', 
+		'07'=>'Июл', '08'=>'Авг', '09'=>'Сен', '10'=>'Окт', '11'=>'Ноя', '12'=>'Дек'];
 
 	public function getFullDate($attribute)
 	{
 		$d = $this->owner->$attribute;
 		return Yii::$app->language == 'ru-RU' 
-			? date('d', $d) . ' ' . self::$month[date('m', $d)] . ' ' . date('Y', $d)
-			: date('Y M d', $d);
+			? date('d', $d) . ' ' . self::$month[date('m', $d)] . ' ' . date('y', $d)
+			: date('y M d', $d);
 	}
 }
