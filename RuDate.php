@@ -28,6 +28,6 @@ class RuDate extends Behavior
 		$d = $this->owner->$attribute;
 		return Yii::$app->language == 'ru-RU' 
 			? date('d', $d) . ' ' . self::$month[date('m', $d)] . ' ' . date('y', $d)
-			: date('y M d', $d);
+			: date('Y M d', $d);
 	}
 }
