@@ -30,3 +30,9 @@ And use it in appropriate place in a view.
 <pre>
 &lt;?= $model->getFullDate('created_at'); ?&gt;
 </pre>
+
+Only month and year.
+
+<pre>
+&lt;?= $model->getFullDate('created_at', true); ?&gt;
+</pre>
