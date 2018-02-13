@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "sergmoro1\\rudate\\": ""
+            "sergmoro1\\rudate\\": "src"
         }
     }
 }

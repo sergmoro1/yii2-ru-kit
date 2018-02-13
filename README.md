@@ -34,5 +34,11 @@ And use it in appropriate place in a view.
 Only month and year.
 
 <pre>
-&lt;?= $model->getFullDate('created_at', true); ?&gt;
+&lt;?= $model->getFullDate('created_at', 'M Y'); ?&gt; // Фев 2018
+</pre>
+
+Full month, day and year.
+
+<pre>
+&lt;?= $model->getFullDate('created_at', 'F d из t, Y (e)'); ?&gt; // Февраль 13 из 28, 2018 (UTC)
 </pre>
