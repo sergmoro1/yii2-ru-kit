@@ -1,10 +1,9 @@
 {
-    "name": "sergmoro1/yii2-ru-date",
-    "version": "1.0.0",
-    "description": "Behavior for Russian date.",
+    "name": "sergmoro1/yii2-ru-kit",
+    "description": "Set of behaviors used for Russian language.",
     "keywords": [
         "yii2",
-        "date", 
+        "date", "month", "slug", "transliteration",
         "russian"
     ],
     "type": "yii2-extension",
@@ -22,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "sergmoro1\\rudate\\": "src"
+            "sergmoro1\\rukit\\": "src"
         }
     }
 }

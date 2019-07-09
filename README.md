@@ -1,44 +1,65 @@
-<h1>Yii2 behavior for date fields processing</h1>
+#Yii2 set of behaviors for Russian language
 
-The Behavior class for operations with date fields in Russian format.
+Russian months for full date. Title transliteration to slug.
 
-<h2>Installation</h2>
+##Installation
 
-<pre>
-$ composer require sergmoro1/yii2-ru-date "dev-master"
-</pre>
+The preferred way to install this extension is through composer.
 
-<h2>Usage</h2>
+Either run
 
-You should define behavior in a Model class.
+`composer require --prefer-dist sergmoro1/yii2-ru-kit`
 
-<pre>
-use sergmoro1\rudate\RuDate;
+or add
+
+`"sergmoro1/yii2-ru-kit": "~1.1"`
+
+to the require section of your composer.json.
+
+##Usage
+
+For example ***common\models\Post.php***
+
+```
+use sergmoro1\rukit\FullDate;
+use sergmoro1\rukit\Translit;
 
 class Post extends ActiveRecord
 {
   ...
   public function behaviors() {
     return [
-      'RuDate' =&gt; ['class' =&gt; RuDate::className()]
+      ['class' => FullDate::className()],
+      ['class' => Translit::className()],
     ];
   }
   ...
-</pre>
+  // Translit
+  public function beforeSave($insert)
+  {
+    if(parent::beforeSave($insert))
+    {
+      $this->translit();
+      return true;
+    } else
+        return false;
+  }
+```
 
-And use it in appropriate place in a view.
-<pre>
-&lt;?= $model->getFullDate('created_at'); ?&gt;
-</pre>
+Somewhere in a view.
+
+```
+<?= $model->fullDate('created_at'); // ru-RU -> 21 Фев 2018 ?>
+```
 
 Only month and year.
 
-<pre>
-&lt;?= $model->getFullDate('created_at', 'M Y'); ?&gt; // Фев 2018
-</pre>
+```
+<?= $model->fullDate('created_at', 'M Y'); // en-US -> Feb 2018 ?>
+```
 
 Full month, day and year.
 
-<pre>
-&lt;?= $model->getFullDate('created_at', 'F d из t, Y (e)'); ?&gt; // Февраль 13 из 28, 2018 (UTC)
-</pre>
+```
+<?= $model->fullDate('created_at', 'F d из t, Y (e)'); // ru-Ru -> Февраль 13 из 28, 2018 (UTC) ?>
+```
