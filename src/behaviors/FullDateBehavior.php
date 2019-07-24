@@ -34,7 +34,7 @@ class FullDateBehavior extends Behavior
         if(!$format)
             $format = self::$default[Yii::$app->language];
         if(Yii::$app->language == 'ru-RU') {
-			$m = self::$month[date('m', $d)];
+            $m = self::$month[date('m', $d)];
             $format = str_replace('M', mb_substr($m, 0, 3, 'UTF-8'), $format);
             $format = str_replace('F', $m, $format);
         }
